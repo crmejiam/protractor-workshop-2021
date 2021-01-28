@@ -15,37 +15,33 @@ describe('Buy a t-shirt', () => {
   const bankPaymentPage: BankPaymentPage = new BankPaymentPage();
   const orderSummaryPage: OrderSummaryPage = new OrderSummaryPage();
 
-  beforeEach(() => {
-    jasmine.DEFAULT_TIMEOUT_INTERVAL = 120000;
-  });
-
   it('then should be bought a t-shirt', async () => {
     await browser.get('http://automationpractice.com/');
-    await(browser.sleep(3000));
+    // await(browser.sleep(3000));
     await menuContentPage.goToTShirtMenu();
     await(browser.sleep(3000));
     await productListPage.goToProductMenu();
     await(browser.sleep(5000));
     await productAddedModalPage.addToCart();
-    await(browser.sleep(5000));
+    // await(browser.sleep(1000));
     await summaryStepPage.proceedCheckout();
-    await(browser.sleep(3000));
+    // await(browser.sleep(3000));
 
     await signInStepPage.signIn('aperdomobo@gmail.com', 'WorkshopProtractor');
-    await(browser.sleep(3000));
+    // await(browser.sleep(3000));
 
     await addressStepPage.proceedCheckout2();
-    await(browser.sleep(3000));
+    // await(browser.sleep(3000));
 
     await shippingStepPage.markCheckbox();
-    await(browser.sleep(3000));
+    // await(browser.sleep(3000));
 
     await shippingStepPage.proceedCheckout3();
-    await(browser.sleep(3000));
+    // await(browser.sleep(3000));
     await paymentStepPage.selectPaymentMethod();
-    await(browser.sleep(3000));
+    // await(browser.sleep(3000));
     await bankPaymentPage.confirmOrder();
-    await(browser.sleep(3000));
+    // await(browser.sleep(3000));
 
     await expect(orderSummaryPage.finishOrder())
       .toBe('Your order on My Store is complete.');
