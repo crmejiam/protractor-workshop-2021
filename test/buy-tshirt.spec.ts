@@ -19,9 +19,9 @@ describe('Buy a t-shirt', () => {
     await browser.get('http://automationpractice.com/');
     // await(browser.sleep(3000));
     await menuContentPage.goToTShirtMenu();
-    await(browser.sleep(3000));
+    // await(browser.sleep(3000));
     await productListPage.goToProductMenu();
-    await(browser.sleep(5000));
+    // await(browser.sleep(5000));
     await productAddedModalPage.addToCart();
     // await(browser.sleep(1000));
     await summaryStepPage.proceedCheckout();
